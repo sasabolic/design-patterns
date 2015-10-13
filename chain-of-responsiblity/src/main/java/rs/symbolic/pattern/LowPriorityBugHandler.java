@@ -21,6 +21,7 @@ public class LowPriorityBugHandler implements BugHandler {
     @Override
     public void handleRequest(BugRequest bug) {
         Objects.requireNonNull(bug, "Bug request must not be null");
+
         if (BugRequest.Type.LOW == bug.getType()) {
             log.debug("Bug '" + bug.getTitle() + "' of type '" + bug.getType() + "' handled by Junior Developer");
         } else if (this.next != null) {

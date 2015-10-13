@@ -15,12 +15,13 @@ public class HighPriorityBugHandler implements BugHandler {
 
     @Override
     public void setNext(BugHandler handler) {
-        this.next = Objects.requireNonNull(handler, "Handler cannot be null");;
+        this.next = Objects.requireNonNull(handler, "Handler cannot be null");
     }
 
     @Override
     public void handleRequest(BugRequest bug) {
         Objects.requireNonNull(bug, "Bug request must not be null");
+
         if (BugRequest.Type.HIGH == bug.getType()) {
             log.debug("Bug '" + bug.getTitle() + "' of type '" + bug.getType() + "' handled by Senior Developer");
         } else if (this.next != null) {
