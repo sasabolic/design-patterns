@@ -1,10 +1,10 @@
-package rs.symbolic.pattern;
+package io.sixhours.pattern;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.mockito.internal.matchers.Null;
+import org.mockito.Mockito;
 
 import static org.mockito.Mockito.*;
 
@@ -26,9 +26,9 @@ public class ChainOfResponsibilityTest {
      */
     @Before
     public void setUp() {
-        lowPriorityHandler = spy(LowPriorityBugHandler.class);
-        mediumPriorityHandler = spy(MediumPriorityBugHandler.class);
-        highPriorityHandler = spy(HighPriorityBugHandler.class);
+        lowPriorityHandler = Mockito.spy(LowPriorityBugHandler.class);
+        mediumPriorityHandler = Mockito.spy(MediumPriorityBugHandler.class);
+        highPriorityHandler = Mockito.spy(HighPriorityBugHandler.class);
 
 
         lowPriorityHandler.setNext(mediumPriorityHandler);

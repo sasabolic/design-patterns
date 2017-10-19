@@ -1,4 +1,4 @@
-package rs.symbolic.pattern;
+package io.sixhours.pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

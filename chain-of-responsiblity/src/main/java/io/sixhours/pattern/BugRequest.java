@@ -1,4 +1,4 @@
-package rs.symbolic.pattern;
+package io.sixhours.pattern;
 
 
 /**
